@@ -1,0 +1,8 @@
+bin/*
+obj/*
+.vscode/*
+input/*
+Days/bin/*
+Days/obj/*
+
+settings.json
