@@ -56,7 +56,7 @@ namespace AOC
             Console.WriteLine($"| 2 | {result2.PadLeft(resultWidth)} | {part2Time.ToString().PadLeft(timeWidth)}ms |");
             Console.WriteLine($"+---------{string.Empty.PadLeft(resultWidth + timeWidth, '-')}--+");
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }
