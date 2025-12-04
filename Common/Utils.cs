@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Security.Cryptography.X509Certificates;
 
 namespace AOC
 {
@@ -146,6 +147,17 @@ namespace AOC
             }
 
             return new List<(int, int)>();
+        }
+
+        public static void Iterate2DGrid<T>(List<List<T>> grid, Action<int, int> func, int padding = 0)
+        {
+            for (int i = 1; i < grid.Count - padding; i++)
+            {
+                for (int j = 1; j < grid[i].Count - padding; j++)
+                {
+                    func(i, j);
+                }
+            }
         }
     }
 }
