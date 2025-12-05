@@ -51,7 +51,7 @@ namespace AOC
             Console.WriteLine($"+---------{string.Empty.PadLeft(resultWidth + timeWidth, '-')}--+");
             Console.WriteLine($"| {string.Empty.PadLeft(timeWidth)}Results{string.Empty.PadLeft(resultWidth)}   |");
             Console.WriteLine($"+---+-{string.Empty.PadLeft(resultWidth, '-')}-+-{string.Empty.PadLeft(timeWidth, '-')}---+");
-            if (parseTime > 10) Console.WriteLine($"| P | {"".PadLeft(resultWidth)} | {parseTime.ToString().PadLeft(timeWidth)}ms |");
+            if (parseTime > 1) Console.WriteLine($"| P | {"".PadLeft(resultWidth)} | {parseTime.ToString().PadLeft(timeWidth)}ms |");
             Console.WriteLine($"| 1 | {result1.PadLeft(resultWidth)} | {part1Time.ToString().PadLeft(timeWidth)}ms |");
             Console.WriteLine($"| 2 | {result2.PadLeft(resultWidth)} | {part2Time.ToString().PadLeft(timeWidth)}ms |");
             Console.WriteLine($"+---------{string.Empty.PadLeft(resultWidth + timeWidth, '-')}--+");

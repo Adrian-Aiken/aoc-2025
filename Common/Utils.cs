@@ -1,5 +1,4 @@
 using System.Collections.Immutable;
-using System.Security.Cryptography.X509Certificates;
 
 namespace AOC
 {
@@ -158,6 +157,18 @@ namespace AOC
                     func(i, j);
                 }
             }
+        }
+
+        public static (int, int) ParseRangeInt(string rangeString, string seperator = "-")
+        {
+            var range = rangeString.Split(seperator).Select(int.Parse).ToArray();
+            return (range[0], range[1]);
+        }
+
+        public static (long, long) ParseRangeLong(string rangeString, string seperator = "-")
+        {
+            var range = rangeString.Split(seperator).Select(long.Parse).ToArray();
+            return (range[0], range[1]);
         }
     }
 }
