@@ -170,5 +170,10 @@ namespace AOC
             var range = rangeString.Split(seperator).Select(long.Parse).ToArray();
             return (range[0], range[1]);
         }
+
+        public static bool IsDigit(char c)
+        {
+            return c >= '0' && c <= '9';
+        }
     }
 }
