@@ -4,6 +4,8 @@ namespace AOC
 {
     public class Program
     {
+        public static bool IsRealInput = false;
+
         public static async Task Main(string[] args)
         {
             // ------- Fetch input for day ------------
@@ -11,7 +13,8 @@ namespace AOC
             var response = Console.ReadKey();
             Console.WriteLine();
 
-            string[] input = response.Key == ConsoleKey.Y ? await InputHelper.GetInput(Settings.Year, Settings.Day) : await InputHelper.GetExampleInput(Settings.Year, Settings.Day);
+            IsRealInput = response.Key == ConsoleKey.Y;
+            string[] input = IsRealInput ? await InputHelper.GetInput(Settings.Year, Settings.Day) : await InputHelper.GetExampleInput(Settings.Year, Settings.Day);
 
             if (input.Count() == 0)
             {
