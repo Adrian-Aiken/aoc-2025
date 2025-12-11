@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Drawing;
 
 namespace AOC
 {
@@ -174,6 +175,26 @@ namespace AOC
         public static bool IsDigit(char c)
         {
             return c >= '0' && c <= '9';
+        }
+
+        public static bool LineIntersect(Point a1, Point a2, Point b1, Point b2)
+        {
+            static bool ccw(Point a, Point b, Point c)
+            {
+                return (c.Y - a.Y) * (b.X - a.X) > (b.Y - a.Y) * (c.X - a.X);
+            }
+
+            return ccw(a1, b1, b2) != ccw(a2, b1, b2) && ccw(a1, a2, b1) != ccw(a1, a2, b2);
+        }
+
+        public static bool PointInBox(Point p, Point a, Point b)
+        {
+            int minX = Math.Min(a.X, b.X);
+            int maxX = Math.Max(a.X, b.X);
+            int minY = Math.Min(a.Y, b.Y);
+            int maxY = Math.Max(a.Y, b.Y);
+
+            return p.X >= minX && p.X <= maxX && p.Y >= minY && p.Y <= maxY;
         }
     }
 }
