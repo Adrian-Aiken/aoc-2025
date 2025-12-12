@@ -196,5 +196,56 @@ namespace AOC
 
             return p.X >= minX && p.X <= maxX && p.Y >= minY && p.Y <= maxY;
         }
+
+        public static IEnumerable<List<T>> PowerSet<T>(List<T> list)
+        {
+            int numSets = 1 << list.Count;
+
+            for (int mask = 0; mask < numSets; mask++)
+            {
+                var nextSet = new List<T>();
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if ((mask & (1 << i)) > 0)
+                    {
+                        nextSet.Add(list[i]);
+                    }
+                }
+
+                yield return nextSet;
+            }
+        }
+
+        public static IEnumerable<List<T>> Multiset<T>(List<T> list, int size)
+        {
+            if (size == 0)
+            {
+                yield return new();
+                yield break;
+            }
+
+            foreach (var subset in Multiset(list, size - 1))
+            {
+                foreach (var item in list)
+                {
+                    var nextList = new List<T>(subset)
+                    {
+                        item
+                    };
+                    yield return nextList;
+                }
+            }
+        }
+
+        public static bool ArrayEquals<T>(T[] left, T[] right)
+        {
+            if (left.Length != right.Length) return false;
+            for (int i = 0; i < left.Length; i++)
+            {
+                if (!Equals(left[i], right[i])) return false;
+            }
+
+            return true;
+        }
     }
 }

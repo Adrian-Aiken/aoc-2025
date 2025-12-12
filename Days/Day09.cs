@@ -1,7 +1,4 @@
-using System.ComponentModel.DataAnnotations;
 using System.Drawing;
-using System.Security.Cryptography;
-using Microsoft.VisualBasic;
 
 namespace AOC.Y2025
 {
