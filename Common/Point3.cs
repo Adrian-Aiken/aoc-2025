@@ -1,5 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
-
 namespace AOC
 {
     public class Point3
